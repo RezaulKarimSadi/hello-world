@@ -1,0 +1,56 @@
+#include <iostream>
+#include<algorithm>
+#include<map>
+#include<stack>
+#include<cstring>
+#include<stdio.h>
+#include<set>
+#include<cmath>
+#include<vector>
+using namespace std;
+
+int main(){
+
+    int i,ma=0,n,q,x,t;
+
+    stack<int>s;
+    stack<int>s1;
+   
+    s1.push(0);
+
+   cin >> n;
+
+   for(i=0;i<n;i++)
+   {
+       cin >> q;
+
+       if(q==1)
+       {
+           cin >> x;
+
+           s.push(x);
+           
+            if(s.top()>=s1.top())
+           {
+               s1.push(x);
+           }
+       }
+        else if(q==2)
+       {
+         
+            if(s.top()==s1.top())
+            {
+                s1.pop();
+           }
+                s.pop();
+       
+       }
+     
+       else if(q==3)
+       {
+      cout << s1.top()<< endl;
+          
+       }
+   }
+    return 0;
+}
